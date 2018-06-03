@@ -2,9 +2,9 @@ import mongoengine
 
 #mongodb://<dbuser>:<dbpassword>@ds119820.mlab.com:19820/muadongkhonglanh
 
-host = "ds119820.mlab.com"
-port = 19820
-db_name = "muadongkhonglanh"
+host = "ds259119.mlab.com"
+port = 59119
+db_name = "chung"
 user_name = "admin"
 password = "admin"
 
