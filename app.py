@@ -72,6 +72,19 @@ def signin():
                     return redirect(url_for('index'))
                 else:
                     return render_template('error.html')
-    # print(username)
+
+
+@app.route('/logout')
+def logout():
+    if 'loggedin' in session:
+        del session['loggedin']
+        return render_template('index.html')
+    elif 'loggedin-customer' in session:
+        del session['loggedin-customer']
+        del session['username']
+        del session['password']
+        return redirect(url_for('index'))
+    else:
+        return render_template('error.html')
 if __name__ == '__main__':
   app.run(debug=True)
