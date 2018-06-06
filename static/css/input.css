@@ -1,0 +1,28 @@
+.w-90{
+  width: 90%;
+}
+.w-70{
+  width: 70%;
+}
+.w-20{
+  width: 20%;
+}
+.h-700{
+  height: 700px;
+}
+.h-100{
+  height: 100px;
+}
+#id{
+  justify-content: center;
+  align-items: center;
+}
+.bg-green{
+  background-color: green;
+}
+.bg-red{
+  background-color: red;
+}
+.bg-gray{
+  background-color: gray;
+}
