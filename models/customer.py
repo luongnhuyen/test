@@ -8,3 +8,4 @@ class Customer(Document):
     password = StringField()
     income = IntField()
     saving = IntField()
+    month = IntField()
