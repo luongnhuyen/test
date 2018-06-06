@@ -4,13 +4,13 @@ import mlab
 from models.customer import Customer
 app = Flask(__name__)
 
-app.secret_key = "super secret"
+app.secret_key = "123456789"
 
 mlab.connect()
 
-@app.route('/')
+@app.route('/index')
 def index():
-    return render_template('index.html')
+    return render_template('homepage.html')
 
 @app.route('/customer')
 def customer():
@@ -19,7 +19,7 @@ def customer():
 
 @app.route('/login', methods=["GET","POST"])
 def login():
-    if ("loggedin" in session) and ("loggedin-customer" in session):
+    if ("loggedin-customer" in session):
         return render_template("error.html")
     else:
         if request.method == "GET":
@@ -30,19 +30,14 @@ def login():
             password = form['password']
             if username=='' and password=='':
                 return render_template("error.html")
-            if username=="admin" and password=="admin":
-                session['loggedin'] == "admin"
-                return redirect(url_for("admin.html"))
+            customer = Customer.objects(username = username, password = password)
+            if customer:
+                session['loggedin-customer'] = 'customer'
+                session['username'] = 'username'
+                session['password'] = 'password'
+                return redirect(url_for('index'))
             else:
-                customer = Customer.objects(username = username, password = password)
-                if customer:
-                    session['loggedin-customer'] = 'customer'
-                    session['username'] = 'username'
-                    session['password'] = 'password'
-                    return redirect(url_for('index'))
-                else:
-                    return render_template('error.html')
-
+                return render_template('error.html')
 
 @app.route('/signin', methods= ['GET', 'POST'])
 def signin():
@@ -56,30 +51,23 @@ def signin():
         password = form['password']
         if name == '' or email=='' or username=='' or password=='':
             return render_template('error.html')
-        if username =='admin' and password == 'admin':
+        customer = Customer.objects(username = username)
+        if customer:
             return render_template('error.html')
         else:
-            customer = Customer.objects(username = username)
+            customer = Customer(name=name, email=email, username=username, password=password)
+            customer.save()
             if customer:
-                return render_template('error.html')
+                session['loggedin-customer'] = "customer"
+                session['username']= username
+                session['password']= password
+                return redirect(url_for('index'))
             else:
-                customer = Customer(name=name, email=email, username=username, password=password)
-                customer.save()
-                if customer:
-                    session['loggedin-customer'] = "customer"
-                    session['username']= username
-                    session['password']= password
-                    return redirect(url_for('index'))
-                else:
-                    return render_template('error.html')
-
+                return render_template('error.html')
 
 @app.route('/logout')
 def logout():
-    if 'loggedin' in session:
-        del session['loggedin']
-        return render_template('index.html')
-    elif 'loggedin-customer' in session:
+    if 'loggedin-customer' in session:
         del session['loggedin-customer']
         del session['username']
         del session['password']
@@ -96,7 +84,6 @@ def input():
         income = form['income']
         saving = form['saving']
         month = form['month']
-        # save service vào database
         new_customer = Customer(income = income, saving = saving, month = month)
         new_customer.save()
         return redirect (url_for('customer'))
