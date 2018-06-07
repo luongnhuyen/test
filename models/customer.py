@@ -7,5 +7,6 @@ class Customer(Document):
     email = StringField()
     password = StringField()
     income = IntField()
-    saving = IntField()
+    goal = IntField()
     month = IntField()
+    saving = IntField()
