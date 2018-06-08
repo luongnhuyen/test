@@ -5,6 +5,7 @@ customer = Customer(name="chung",
             username="chung",
             email="chung@gmail.com",
             password="chung",
-            income=1000000,
-            saving=500000)
+            income=10,
+            goal = 100,
+            month = 10,)
 customer.save()

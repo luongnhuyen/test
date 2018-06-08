@@ -6,13 +6,14 @@
   </head>
   <body>
 <h1>Customer page</h1>
-{%for customer in all_customer%}
+{% for customer in all_customer%}
   <div>
     <p>Name: {{customer.name}}</p>
     <p>Email: {{customer.email}}</p>
     <p>Income: {{ customer.income}}</p>
-    <p>Saving: {{customer.saving}}</p>
+    <p>Saving: {{customer.goal}}</p>
     <p>Month: {{customer.month}}</p>
+    <p>Saving: {{ customer.saving}}</p>
     <hr>
   </div>
 {%endfor%}

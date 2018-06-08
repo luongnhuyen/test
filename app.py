@@ -8,13 +8,20 @@ app.secret_key = "123456789"
 
 mlab.connect()
 
-@app.route('/index')
+@app.route('/', methods = ['GET', 'POST'])
 def index():
     return render_template('index.html')
+    if request.method == "GET":
+        return render_template('index.html')
+    elif request.method == "POST":
+        form = request.form
+        income = form['income']
+        goal = form['goal']
+        month = form['month']
 
-@app.route('/index')
-def index():
-    return render_template('index.html')
+        new_customer = Customer(income = income, goal = goal, month = month, saving = saving)
+        new_customer.save()
+        return redirect (url_for('customer'))
 
 @app.route('/customer')
 def customer():
@@ -82,13 +89,14 @@ def logout():
 @app.route('/question',methods = ['GET', 'POST'])
 def input():
     if request.method == "GET":
-        return render_template('input-page.html')
+        return render_template('index.html')
     elif request.method == "POST":
         form = request.form
         income = form['income']
-        saving = form['saving']
+        goal = form['goal']
         month = form['month']
-        new_customer = Customer(income = income, saving = saving, month = month)
+
+        new_customer = Customer(income = income, goal = goal, month = month, saving = saving)
         new_customer.save()
         return redirect (url_for('customer'))
 

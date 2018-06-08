@@ -31,8 +31,22 @@
 .bg-blue{
   background: blue;
 }
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #center{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.cl-red{
+  background-color: #f54844;
+}
+.font-size-30px{
+  font-size: 30px;
+}
+.cl-xam{
+  color: #616161;
 }
