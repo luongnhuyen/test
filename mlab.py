@@ -1,6 +1,6 @@
 import mongoengine
 
-#mongodb://<dbuser>:<dbpassword>@ds119820.mlab.com:19820/muadongkhonglanh
+# mongodb://<dbuser>:<dbpassword>@ds147420.mlab.com:47420/goldenwallet
 
 host = "ds259119.mlab.com"
 port = 59119
