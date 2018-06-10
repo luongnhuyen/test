@@ -17,10 +17,20 @@ def index():
         income = form['income']
         goal = form['goal']
         month = form['month']
-        saving = int(round(((int(goal)*0.05)/(pow(1.05,int(month))-1)),0))
-        customer = Customer(income = income, goal = goal, month = month, saving = saving)
-        customer.save()
-        return redirect (url_for('customer'))
+        saving = round(((int(goal)*0.005)/(pow(1.005,int(month))-1)),3)
+        session['income']= income
+        session['goal']=goal
+        session['saving']=saving
+        if saving > int(20*int(income)/100) :
+            return "Ồ, bạn thật là tham vọng, để đạt được mục tiêu cần thêm thời gian hoặc tìm cách tăng thêm thu nhập."
+        else:
+            customer = Customer(income = income, goal = goal, month = month, saving = saving)
+            customer.save()
+            return redirect (url_for('saving'))
+
+@app.route('/saving')
+def saving():
+    return render_template('saving.html')
 
 @app.route('/customer')
 def customer():

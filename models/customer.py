@@ -9,4 +9,4 @@ class Customer(Document):
     income = IntField()
     goal = IntField()
     month = IntField()
-    saving = IntField()
+    saving = FloatField()

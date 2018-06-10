@@ -1,8 +1,11 @@
-.w-90{
-  width: 90%;
+.w-80{
+  width: 80%;
 }
 .w-40{
   width: 40%;
+}
+.w-60{
+  width: 60%;
 }
 .w-25{
   width: 25%;
@@ -13,6 +16,12 @@
 .h-260{
   height: 260px;
 }
+.h-255{
+  height: 255px;
+}
+.h-120{
+  height: 120px;
+}
 .h-100{
   height: 100px;
 }
@@ -21,6 +30,9 @@
 }
 .h-70{
   height: 70px;
+}
+.h-60{
+  height: 60px;
 }
 .h-40{
   height: 40px;
@@ -50,4 +62,8 @@
 }
 .cl-xam{
   color: #616161;
+}
+.mtb-30{
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
