@@ -10,5 +10,3 @@ class Customer(Document):
     goal = IntField()
     month = IntField()
     saving = FloatField()
-    max = IntField()
-    bank = FloatField()
