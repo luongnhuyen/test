@@ -1,10 +1,16 @@
 from flask import *
 from mongoengine import *
 import mlab
+import jinja2
+from os import path
 from models.customer import Customer
 app = Flask(__name__)
 
 app.secret_key = "123456789"
+
+# jinja_environment = jinja2.Environment(
+#   loader=jinja2.FileSystemLoader(['templates', 'templates/homepage'])
+# )
 
 mlab.connect()
 
@@ -23,6 +29,8 @@ def index():
         session['income']= income
         session['goal']=goal
         session['saving']=saving
+        if max > income:
+            return "Ngáo quá! Bạn tiết kiệm nhiều hơn cả thu nhập. Nhập lại thôi"
         if saving > float(max) :
             return "Ồ, bạn thật là tham vọng, để đạt được mục tiêu cần thêm thời gian hoặc tìm cách tăng thêm thu nhập."
         else:
