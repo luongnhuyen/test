@@ -17,11 +17,13 @@ def index():
         income = form['income']
         goal = form['goal']
         month = form['month']
+        max = form['max']
+
         saving = round(((int(goal)*0.005)/(pow(1.005,int(month))-1)),3)
         session['income']= income
         session['goal']=goal
         session['saving']=saving
-        if saving > int(20*int(income)/100) :
+        if saving > float(max) :
             return "Ồ, bạn thật là tham vọng, để đạt được mục tiêu cần thêm thời gian hoặc tìm cách tăng thêm thu nhập."
         else:
             customer = Customer(income = income, goal = goal, month = month, saving = saving)
