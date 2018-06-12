@@ -26,7 +26,12 @@
         <option value="0.055">TPbank</option>
       </select>
     </div>
-    <div class=" d-flex justify-content-end mt-40">
+    {% if error == 1 %}
+    <font color="red" size="3">Nhập lỗi</font>
+    {% elif error == 2 %}
+    <font color="red" size="3">Không thể đạt được mục tiêu. Hãy điều chỉnh lại mục tiêu hoặc thời gian</font>
+    {% endif %}
+    <div class=" d-flex justify-content-end mt-20">
       <button class="btn bg-red text-white" type="submit">Xem kết quả</button>
     </div>
   </form>
