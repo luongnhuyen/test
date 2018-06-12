@@ -54,15 +54,12 @@ def index():
         session['income']= income
         session['goal']=goal
         session['saving']=saving
-<<<<<<< HEAD:app.py
         if max > income:
             return "Ngáo quá! Bạn tiết kiệm nhiều hơn cả thu nhập. Nhập lại thôi"
         if saving > float(max) :
-=======
 
 
         if saving > int(20*int(income)/100) :
->>>>>>> 2a58d7be97372ab5af8a843fe8ff735cbc37d091:goldenwallet/app.py
             return "Ồ, bạn thật là tham vọng, để đạt được mục tiêu cần thêm thời gian hoặc tìm cách tăng thêm thu nhập."
         else:
             customer = Customer(income = income, goal = goal, month = month, saving = saving)
