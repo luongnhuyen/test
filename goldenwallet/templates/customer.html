@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Customer</title>
+  </head>
+  <body>
+<h1>Customer page</h1>
+{% for customer in all_customer%}
+  <div>
+    <p>Income: {{customer.income}}</p>
+    <p>Goal: {{customer.goal}}</p>
+    <p>Month: {{customer.month}}</p>
+    <p>Saving: {{customer.saving}}</p>
+    <hr>
+  </div>
+{%endfor%}
+  </body>
+</html>
