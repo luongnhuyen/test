@@ -30,18 +30,42 @@ def index():
         if saving > float(max) :
             return "Ồ, bạn thật là tham vọng, để đạt được mục tiêu cần thêm thời gian hoặc tìm cách tăng thêm thu nhập."
         else:
-            customer = Customer(income = income, goal = goal, month = month, saving = saving)
-            # customer.save()
-            return redirect (url_for('saving'))
+            saving = round(((int(goal)*float(bank)/12)/(pow((1+float(bank)/12),int(month))-1)),3)
+            session['income']= income
+            session['goal']=goal
+            session['saving']=saving
+            session['bank']=bank
+            session['month']=month
+
+            if saving > float(max) :
+                error = 2
+                return render_template('error.html',error=error)
+            else:
+                return redirect (url_for('saving'))
 
 @app.route('/saving')
 def saving():
-    return render_template('saving.html')
+    colors = ["#f54844", "#dbdad3"]
+    labels = ["Thu nhập","Tiết kiệm"]
+    pie_labels = labels
+    pie_values = [session['income'], session['saving']]
 
-@app.route('/customer')
-def customer():
-    all_customer = Customer.objects()
-    return render_template('customer.html', all_customer=all_customer)
+    bar_values= []
+    bar_labels = []
+
+    month = int(session['month'])
+    bank = float(session['bank'])
+    saving = float(session['saving'])
+    var = 0
+    for i in range(int(month)):
+        name = "Tháng thứ " + str(i + 1)
+        var = round(var + saving*(pow((1+bank/12),i)),3)
+        bar_labels.append(name)
+        bar_values.append(var)
+    print(bar_values)
+
+    return render_template('saving.html', max=200, set=zip(pie_values, labels, colors),labels=bar_labels, values=bar_values)
+>>>>>>> f95ca651f9bc22e8de25110d5f11dff4e0824067
 
 if __name__ == '__main__':
   app.run(debug=True)
