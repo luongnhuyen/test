@@ -4,7 +4,7 @@ $(document).ready(()=>{
 
 const Show = ()=>{
     $("#form_index").submit((e)=>{
-      e.preventDefault;
+      e.preventDefault();
       value_income = parseInt($("#income").val());
       value_goal = parseInt($("#goal").val());
       value_month = parseInt($("#month").val());
@@ -15,10 +15,11 @@ const Show = ()=>{
       console.log(value_month);
       console.log(value_max);
       console.log(value_bank);
-      let saving = (value_goal*value_bank) / (Math.pow((1+value_bank),value_month) -1)
+      let saving = (value_goal*value_bank/12) / (Math.pow((1+value_bank/12),value_month) - 1)
+      console.log(saving);
       let htmlInsertWarning="";
       $("#show").empty();
-      if (value_income > saving){
+      if (value_income < saving){
           htmlInsertWarning = `<font color="red" size="3">Nhập lỗi</font>`;
           document.querySelector("#show").insertAdjacentHTML('afterbegin', htmlInsertWarning);
       }
@@ -28,9 +29,8 @@ const Show = ()=>{
       }
       else {
         console.log("AAAAA");
-        return true;
+        window.location = `../saving`;
       }
-
       return false;
     })
 
