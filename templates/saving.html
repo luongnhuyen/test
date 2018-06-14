@@ -9,6 +9,13 @@
   <body>
     {% include 'homepage/header.html' %}
     {% include 'result/result.html' %}
-    {% include 'homepage/footer.html' %}
+    <div class="d-flex center">
+      <a href="{{url_for('analysis')}}">
+        <button class="btn bg-red text-white" type="button">Phân tích chi tiêu theo tháng</button>
+      </a>
+    </div>
+    <br>
+    <br>
+    {% include 'homepage/footer.html' %}  
   </body>
 </html>
