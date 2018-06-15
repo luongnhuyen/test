@@ -1,7 +1,5 @@
 from flask import *
 from mongoengine import *
-import mlab
-from models.buy import Buy
 
 app = Flask(__name__)
 
