@@ -25,6 +25,9 @@
 .h-600{
   height: 600px;
 }
+.h-500{
+  height: 500px;
+}
 .h-400{
   height: 400px;
 }
@@ -105,6 +108,9 @@
 }
 .mb-50{
   margin-bottom: 50px;
+}
+.mb-200{
+  margin-bottom: 200px;
 }
 .bg-1{
   background: url("../images/1.jpg") center no-repeat;
