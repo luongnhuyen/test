@@ -1,5 +1,7 @@
 from flask import *
 from mongoengine import *
+import mlab
+from models.thing import Thing
 
 app = Flask(__name__)
 
