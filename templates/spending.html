@@ -14,23 +14,21 @@
     {% include 'homepage/footer.html' %}
   </body>
   <script>
-
-var acc = document.getElementsByClassName("accordion");
-console.log("acclength: ", acc.length)
-var i;
-
-for (i = 0; i < acc.length; i++) {
-console.log(acc[i])
-acc[i].addEventListener("click", function() {
-  console.log("click")
-  this.classList.toggle("active");
-  var panel = this.nextElementSibling;
-  if (panel.style.maxHeight){
-    panel.style.maxHeight = null;
-  } else {
-    panel.style.maxHeight = panel.scrollHeight + "px";
+  var acc = document.getElementsByClassName("accordion");
+  console.log("acclength: ", acc.length)
+  var i;
+  for (i = 0; i < acc.length; i++) {
+  console.log(acc[i])
+  acc[i].addEventListener("click", function() {
+    console.log("click")
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
   }
-});
-}
-</script>
+  </script>
 </html>
