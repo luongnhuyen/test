@@ -27,11 +27,11 @@
       </select>
     </div>
     {% if error == 1 %}
-    <font color="red" size="3">Không được để ô trống. Bạn cần trả lời hết các câu hỏi</font>
+    <font color="red" size="3">Bạn cần trả lời hết các câu hỏi!</font>
     {% elif error == 2 %}
-    <font color="red" size="3">Số tiền cần tiết kiệm mỗi tháng lớn hơn khả năng tiết kiệm của bạn. Nên kéo dài thời gian hoặc tăng khả năng tiết kiệm mỗi tháng</font>
+    <font color="red" size="3">Số tiền cần tiết kiệm mỗi tháng vượt quá khả năng tiết kiệm của bạn. Nên kéo dài thời gian hoặc tăng khả năng tiết kiệm mỗi tháng</font>
     {% elif error == 3 %}
-    <font color="red" size="3"> Không hợp lệ. Khả năng tiết kiệm mỗi tháng cao hơn cả thu nhập. Bạn cần nhập lại </font>
+    <font color="red" size="3"> Không hợp lệ! Khả năng tiết kiệm mỗi tháng phải nhỏ hơn thu nhập !</font>
 
 
     {% endif %}

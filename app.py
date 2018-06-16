@@ -62,7 +62,7 @@ def saving():
         name = "Tháng thứ " + str(i + 1)
         var = var + saving*(pow((1+bank/12),i))
         bar_labels.append(name)
-        bar_values.append(round(var))
+        bar_values.append(round(var,2))
 
     return render_template('saving.html',saving=round(saving,2), max=max, set=zip(pie_values, labels, colors),labels=bar_labels, values=bar_values, ratio_save_income = ratio_save_income)
 
@@ -85,7 +85,20 @@ def analysis():
             error = 1
             return render_template('detail.html', money = money,error=error)
         else:
-            return render_template('spending.html', money = money, n1=round(n1*money,2), n2=round(n2*money,2), n3=round(n3*money,2), n4=round(n4*money,2), n5=round(n5*money,2))
+            return render_template('spending.html',
+            money = money,
+            n1=round(n1*money,2),
+            n2=round(n2*money,2),
+            n3=round(n3*money,2),
+            n4=round(n4*money,2),
+            n5=round(n5*money,2),
+            food = round(n1*money*0.5,2),
+            go = round(n1*money*0.2,2),
+            life = round(n1*money*0.2,2),
+            other = round(n1*money*0.1,2),
+            book = round(n2*money*0.4,2),
+            training = round(n2*money*0.6,2)
+            )
 
 @app.route('/service')
 def service():
