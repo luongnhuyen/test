@@ -7,7 +7,7 @@
     {% for luxury in all_luxury %}
     <div class="card mb-3" style="width: 18rem;">
       <img class="card-img-top" src="{{luxury.picture}}" alt="Card image cap" height="300">
-      <div class="card-body">
+      <div class="card-body d-flex center flex-column">
         <h5 class="card-title">{{luxury.name}}</h5>
         <p class="card-text">{{luxury.price}} VND</p>
         <a href="{{luxury.link}}" target="#" class="btn bg-gray text-red">Đặt mua</a>
