@@ -4,6 +4,9 @@
   </div>
 
   <div class="d-flex justify-content-around container flex-wrap">
+    {% if all_food is not none %}
+      <h5>Bạn nên ăn cùng với gia đình để tiết kiệm chi phí</h5>
+    {% else %}
     {% for food in all_food %}
     <div class="card mb-3" style="width: 18rem;">
       <img class="card-img-top" src="{{food.picture}}" alt="Card image cap" height="300">
@@ -14,5 +17,6 @@
       </div>
     </div>
     {% endfor %}
+    {%endif %}
   </div>
 </div>
