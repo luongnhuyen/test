@@ -114,5 +114,30 @@ def service():
     all_service = Service.objects()
     return render_template('service.html',all_service=all_service)
 
+@app.route('/n1')
+def n1():
+    all_service = Service.objects(type="food")
+    return render_template('service.html',all_service=all_service)
+
+@app.route('/n2')
+def n2():
+    all_service = Service.objects(type="book")
+    return render_template('service.html',all_service=all_service)
+
+@app.route('/n3')
+def n3():
+    all_service = Service.objects()
+    return render_template('service.html',all_service=all_service)
+
+@app.route('/n4')
+def n4():
+    all_service = Service.objects()
+    return render_template('service.html',all_service=all_service)
+
+@app.route('/n5')
+def n5():
+    all_service = Service.objects()
+    return render_template('service.html',all_service=all_service)
+
 if __name__ == '__main__':
   app.run(debug=True)
