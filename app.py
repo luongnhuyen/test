@@ -1,7 +1,7 @@
 from flask import *
 from mongoengine import *
 import mlab
-from models.thing import Thing
+from models.buy import Buy
 
 app = Flask(__name__)
 
@@ -86,6 +86,11 @@ def analysis():
             return render_template('detail.html', money = money,error=error)
         else:
             return render_template('spending.html', money = money, n1=round(round(n1,1)*money,2), n2=round(round(n2,1)*money,2), n3=round(round(n3,1)*money,2), n4=round(round(n4,1)*money,2), n5=round(round(n5,1)*money))
+
+@app.route('/buy')
+def buy():
+    all_buy = Buy.objects()
+    return render_template('buy.html',all_buy=all_buy)
 
 if __name__ == '__main__':
   app.run(debug=True)

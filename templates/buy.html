@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+  </head>
+  <body>
+<h1>Admin page</h1>
+  {% for buy in all_buy %}
+    {{loop.index}}
+    {{buy.name}}
+    {{buy.type}}
+    {{buy.price}}
+    {{buy.link}}
+    {{buy.picture}}
+  {% endfor %}
+<hr>
+  </body>
+</html>
