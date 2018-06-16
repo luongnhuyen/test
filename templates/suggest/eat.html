@@ -4,19 +4,19 @@
   </div>
 
   <div class="d-flex justify-content-around container flex-wrap">
-    {% if all_food is none %}
-      <h5>Bạn nên ăn cùng với gia đình để tiết kiệm chi phí</h5>
-    {% else %}
-    {% for food in all_food %}
-    <div class="card mb-3" style="width: 18rem;">
-      <img class="card-img-top" src="{{food.picture}}" alt="Card image cap" height="300">
-      <div class="card-body d-flex center flex-column">
-        <h5 class="card-title">{{food.name}}</h5>
-        <p class="card-text">{{food.price}} VND</p>
-        <a href="{{food.link}}" target="#" class="btn bg-gray text-red">Đặt mua</a>
+    {% if count_food != 0 %}
+      {% for food in all_food %}
+      <div class="card mb-3" style="width: 18rem;">
+        <img class="card-img-top" src="{{food.picture}}" alt="Card image cap" height="300">
+        <div class="card-body d-flex center flex-column">
+          <h5 class="card-title">{{food.name}}</h5>
+          <p class="card-text">{{food.price}} VND</p>
+          <a href="{{food.link}}" target="#" class="btn bg-gray text-red">Đặt mua</a>
+        </div>
       </div>
-    </div>
-    {% endfor %}
+      {% endfor %}
+    {% else %}
+      <h5>Không có gợi ý phù hợp</h5>
     {%endif %}
   </div>
 </div>

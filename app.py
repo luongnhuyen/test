@@ -110,6 +110,11 @@ def analysis():
                 all_luxury = Service.objects(type = "luxury",price__lte = n3*1000000)
                 all_charity = Service.objects(type = "charity",price__lte = n4*1000000)
                 all_invest = Service.objects(type = "invest",price__lte = n5*1000000)
+                count_food = len(all_food)
+                count_book = len(all_book)
+                count_luxury = len(all_luxury)
+                count_charity = len(all_charity)
+                count_invest = len(all_invest)
                 return render_template('spending.html',
                 money = money,
                 n1=n1,
@@ -127,7 +132,12 @@ def analysis():
                 all_book = all_book,
                 all_luxury = all_luxury,
                 all_charity = all_charity,
-                all_invest = all_invest
+                all_invest = all_invest,
+                count_food = count_food,
+                count_book = count_book,
+                count_luxury = count_luxury,
+                count_charity = count_charity,
+                count_invest = count_invest
                 )
 
 @app.route('/service')

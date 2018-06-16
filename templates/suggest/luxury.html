@@ -4,6 +4,7 @@
   </div>
 
   <div class="d-flex justify-content-around container flex-wrap">
+    {% if count_luxury != 0 %}
     {% for luxury in all_luxury %}
     <div class="card mb-3" style="width: 18rem;">
       <img class="card-img-top" src="{{luxury.picture}}" alt="Card image cap" height="300">
@@ -14,5 +15,8 @@
       </div>
     </div>
     {% endfor %}
+    {% else %}
+      <h5>Không có gợi ý phù hợp</h5>
+    {%endif %}
   </div>
 </div>
