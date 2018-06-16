@@ -3,19 +3,19 @@
   <form class="col-md-6" method="post">
     <div class="form-group cl-xam">
       <label >Thu nhập mỗi tháng</label>
-      <input type="number" class="form-control text-right" placeholder="triệu đồng" name="income" value="" min="0" max="100">
+      <input type="number" class="form-control text-right" placeholder="triệu đồng" name="income" value="" min="0" >
     </div>
     <div class="form-group cl-xam">
       <label >Mục tiêu tiết kiệm</label>
-      <input type="number" class="form-control text-right" placeholder="triệu đồng" name="goal" value="" min="0" max="100">
+      <input type="number" class="form-control text-right" placeholder="triệu đồng" name="goal" value="" min="0" >
     </div>
     <div class="form-group cl-xam ">
       <label>Bạn muốn đạt mục tiêu sau bao lâu</label>
-      <input type="number" class="form-control text-right" placeholder="tháng" name="month" value="" min="0" max="100">
+      <input type="number" class="form-control text-right" placeholder="tháng" name="month" value="" min="0" >
     </div>
     <div class="form-group cl-xam ">
       <label>Số tiền TỐI ĐA có thể tiết kiệm mỗi tháng</label>
-      <input type="number" class="form-control text-right" placeholder="triệu đồng" name="max" value="" min="0" max="100">
+      <input type="number" class="form-control text-right" placeholder="triệu đồng" name="max" value="" min="0" >
     </div>
     <div class="form-group cl-xam">
       <label>Chọn ngân hàng muốn gửi</label>
@@ -24,7 +24,6 @@
         <option value="0.064">Vietcombank - Lãi suất 6.4% /năm</option>
         <option value="0.069">BIDV - Lãi suất 6.9% /năm</option>
         <option value="0.073">TPbank - Lãi suất 7.3% /năm</option>
-        <option value="0">Không gửi</option>
       </select>
     </div>
     {% if error == 1 %}
