@@ -4,7 +4,7 @@
   </div>
 
   <div class="d-flex justify-content-around container flex-wrap">
-    {% if all_food is not none %}
+    {% if all_food is none %}
       <h5>Bạn nên ăn cùng với gia đình để tiết kiệm chi phí</h5>
     {% else %}
     {% for food in all_food %}
