@@ -135,5 +135,21 @@ def service():
     all_service = Service.objects()
     return render_template('service.html',all_service=all_service)
 
+@app.route('/new_service_input', methods= ["GET", "POST"])
+def new_service_input():
+    if request.method == "GET":
+        return render_template('new_service_input.html')
+    elif request.method == "POST":
+        form = request.form
+        name  = form ['name']
+        type = form ['type']
+        price = form ['price']
+        link = form ['link']
+        picture = form ['picture']
+        service = Service(name=name, type=type, price=price, link=link, picture=picture)
+        service.save()
+        all_service = Service.objects()
+        return render_template('service.html',all_service=all_service)
+
 if __name__ == '__main__':
   app.run(debug=True)
