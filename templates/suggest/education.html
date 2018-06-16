@@ -7,7 +7,7 @@
     {% for book in all_book %}
     <div class="card mb-3" style="width: 18rem;">
       <img class="card-img-top" src="{{book.picture}}" alt="Card image cap" height="300">
-      <div class="card-body">
+      <div class="card-body d-flex center flex-column">
         <h5 class="card-title">{{book.name}}</h5>
         <p class="card-text">{{book.price}} VND</p>
         <a href="{{book.link}}" target="#" class="btn bg-gray text-red">Đặt mua</a>
