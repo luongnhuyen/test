@@ -99,12 +99,12 @@ def analysis():
                 n3=round(n3*money/100,2)
                 n4=round(n4*money/100,2)
                 n5=round(n5*money/100,2)
-                food = n1*0.5
-                go = n1*0.2
-                life = n1*0.2
-                other = n1*0.1
-                book = n2*0.4
-                training = n2*0.6
+                food = round(n1*0.5,2)
+                go = round(n1*0.2,2)
+                life = round(n1*0.2,2)
+                other = round(n1*0.1,2)
+                book = round(n2*0.4,2)
+                training = round(n2*0.6,2)
                 all_food = Service.objects(type = "food",price__lte = food*1000000/90)
                 all_book = Service.objects(type = "book",price__lte = n2*1000000)
                 all_luxury = Service.objects(type = "luxury",price__lte = n3*1000000)
