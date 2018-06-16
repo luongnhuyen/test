@@ -1,63 +1,18 @@
-
-<div id="sg_luxury" class="rounded border border-danger container">
-<div class="">
-  <p class="text-red text-center font-size-25px pt-20px">HƯỞNG THỤ GÌ ĐÂY?</p>
-</div>
-
-<div class="d-flex justify-content-around container flex-wrap">
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="https://media.foody.vn/res/g73/722004/prof/s/foody-upload-api-foody-mobile-7-jpg-180423144316.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Phở bò</h5>
-    <p class="card-text">25.000</p>
-    <a href="#" class="btn btn-primary">Đặt mua</a>
-  </div>
+<div id="sg_eat" class="rounded border border-danger container">
+  <div class="">
+    <p class="text-red text-center font-size-25px pt-20px">GỢI Ý HƯỞNG THỤ</p>
   </div>
 
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="https://media.foody.vn/res/g73/722004/prof/s/foody-upload-api-foody-mobile-7-jpg-180423144316.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Phở bò</h5>
-    <p class="card-text">25.000</p>
-    <a href="#" class="btn btn-primary">Đặt mua</a>
+  <div class="d-flex justify-content-around container flex-wrap">
+    {% for luxury in all_luxury %}
+    <div class="card mb-3" style="width: 18rem;">
+      <img class="card-img-top" src="{{luxury.picture}}" alt="Card image cap" height="300">
+      <div class="card-body">
+        <h5 class="card-title">{{luxury.name}}</h5>
+        <p class="card-text">{{luxury.price}}</p>
+        <a href="{{luxury.link}}" target="#" class="btn bg-gray text-red">Đặt mua</a>
+      </div>
+    </div>
+    {% endfor %}
   </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="https://media.foody.vn/res/g73/722004/prof/s/foody-upload-api-foody-mobile-7-jpg-180423144316.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Phở bò</h5>
-    <p class="card-text">25.000</p>
-    <a href="#" class="btn btn-primary">Đặt mua</a>
-  </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="https://media.foody.vn/res/g73/722004/prof/s/foody-upload-api-foody-mobile-7-jpg-180423144316.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Phở bò</h5>
-    <p class="card-text">25.000</p>
-    <a href="#" class="btn btn-primary">Đặt mua</a>
-  </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="https://media.foody.vn/res/g73/722004/prof/s/foody-upload-api-foody-mobile-7-jpg-180423144316.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Phở bò</h5>
-    <p class="card-text">25.000</p>
-    <a href="#" class="btn btn-primary">Đặt mua</a>
-  </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="https://media.foody.vn/res/g73/722004/prof/s/foody-upload-api-foody-mobile-7-jpg-180423144316.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Phở bò</h5>
-    <p class="card-text">25.000</p>
-    <a href="#" class="btn btn-primary">Đặt mua</a>
-  </div>
-  </div>
-
-</div>
 </div>

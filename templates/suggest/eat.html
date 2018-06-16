@@ -1,11 +1,18 @@
-
-<div id="sg_eat" class="">
+<div id="sg_eat" class="rounded border border-danger container">
+  <div class="">
+    <p class="text-red text-center font-size-25px pt-20px">GỢI Ý ĂN UỐNG</p>
+  </div>
 
   <div class="d-flex justify-content-around container flex-wrap">
     {% for food in all_food %}
-      <p>{{food.name}}</p>
-      <p>{{food.price}}</p>
-      <p>{{food.link}}</p>
-      <p><img src="{{food.picture}}" alt=""></p>
+    <div class="card mb-3" style="width: 18rem;">
+      <img class="card-img-top" src="{{food.picture}}" alt="Card image cap" height="300">
+      <div class="card-body">
+        <h5 class="card-title">{{food.name}}</h5>
+        <p class="card-text">{{food.price}}</p>
+        <a href="{{food.link}}" target="#" class="btn bg-gray text-red">Đặt mua</a>
+      </div>
+    </div>
     {% endfor %}
   </div>
+</div>

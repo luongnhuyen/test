@@ -105,10 +105,11 @@ def analysis():
                 other = round(n1*money*0.1/100,2)
                 book = round(n2*money*0.4/100,2)
                 training = round(n2*money*0.6/100,2)
-                all_food = Service.objects(type = "food")
-                all_drink = Service.objects(type = "drink",price__lte = food)
-                all_book = Service.objects(type = "book",price__lte = book)
-                all_training = Service.objects(type = "training",price__lte = training)
+                all_food = Service.objects(type = "food",price__lte = food*1000000/90)
+                all_book = Service.objects(type = "book",price__lte = n2*1000000)
+                all_luxury = Service.objects(type = "luxury",price__lte = n3*1000000)
+                all_charity = Service.objects(type = "charity",price__lte = n4*1000000)
+                all_invest = Service.objects(type = "invest",price__lte = n5*1000000)
                 return render_template('spending.html',
                 money = money,
                 n1=n1,
@@ -123,9 +124,7 @@ def analysis():
                 book = book,
                 training = training,
                 all_food = all_food,
-                all_drink = all_drink,
-                all_book = all_book,
-                all_training = all_training
+                all_book = all_book
                 )
 
 @app.route('/service')
