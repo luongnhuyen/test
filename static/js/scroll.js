@@ -5,7 +5,7 @@ $(document).ready(function(){
         scrollTop: $($.attr(this, 'href')).offset().top
     }, 500);
   });
-  $('a[href^="#sg_eat"]').on('click', function (event) {
+  $('a[href^="#sg_charity"]').on('click', function (event) {
     event.preventDefault();
     $("html,body").animate({
         scrollTop: $($.attr(this, 'href')).offset().top
@@ -24,6 +24,12 @@ $(document).ready(function(){
     }, 500);
   });
 
+  $('a[href^="#sg_invest"]').on('click', function (event) {
+    event.preventDefault();
+    $("html,body").animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+    }, 500);
+  });
 
 
 

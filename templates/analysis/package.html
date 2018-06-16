@@ -43,7 +43,11 @@
       <button class="btn bg-red text-white" type="submit">Xem kết quả</button>
       {% if error == 1 %}
       <div class="mt-10">
-        <font color="red" size="3" class="text-center">Nhập lỗi</font>
+        <font color="red" size="3" class="text-center">Không được để ô trống</font>
+      </div>
+      {% elif error==2 %}
+      <div class="mt-10">
+        <font color="red" size="3" class="text-center">Tổng tỷ trọng các khoản chi phải bằng 100</font>
       </div>
       {% endif %}
     </div>
