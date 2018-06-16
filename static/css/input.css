@@ -22,6 +22,9 @@
 .w-15{
   width: 15%;
 }
+.w-18{
+  width: 18%;
+}
 .h-600{
   height: 600px;
 }
@@ -54,6 +57,12 @@
 }
 .h-40{
   height: 40px;
+}
+.h-45{
+  height: 45px;
+}
+.h-50{
+  height: 50px;
 }
 .bg-white{
   background: #fdfdfd;
@@ -103,6 +112,9 @@
 .mr-40{
   margin-right: 40px;
 }
+.mb-20{
+  margin-bottom: 20px;
+}
 .mb-50{
   margin-bottom: 50px;
 }
@@ -148,6 +160,9 @@
 }
 .pt-50px{
   padding-top:50px;
+}
+.pt-20px{
+  padding-top: 20px;
 }
 .pb-50px{
   padding-bottom: 50px;
