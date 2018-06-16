@@ -91,7 +91,7 @@ def analysis():
             n4 = int(form['n4'])
             n5 = int(form['n5'])
             if (n1 + n2 + n3 + n4 + n5) != 100:
-                error = 1
+                error = 2
                 return render_template('detail.html', money = money,error=error)
             else:
                 n1=round(n1*money/100,2)
