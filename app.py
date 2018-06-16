@@ -124,7 +124,10 @@ def analysis():
                 book = book,
                 training = training,
                 all_food = all_food,
-                all_book = all_book
+                all_book = all_book,
+                all_luxury = all_luxury,
+                all_charity = all_charity,
+                all_invest = all_invest
                 )
 
 @app.route('/service')
