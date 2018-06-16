@@ -16,6 +16,9 @@
 .w-50{
   width: 50%;
 }
+.w-30{
+  width: 30%;
+}
 .w-25{
   width: 25%;
 }
@@ -93,11 +96,17 @@
 .font-size-25px{
   font-size: 25px;
 }
+.font-size-15px{
+  font-size: 15px;
+}
 .mt-65{
   margin-top: 65px;
 }
 .mt-40{
   margin-top: 40px;
+}
+.mt-30{
+  margin-top: 30px;
 }
 .mt-20{
   margin-top: 20px;
@@ -124,22 +133,6 @@
 }
 .bg-2{
   background: url('https://i.imgur.com/Irt8sdS.png') center no-repeat;
-  background-size: cover;
-}
-.bg-3{
-  background: url("../images/3.jpg") center no-repeat;
-  background-size: cover;
-}
-.bg-4{
-  background: url("../images/4.jpg") center no-repeat;
-  background-size: cover;
-}
-.bg-5{
-  background: url("../images/5.jpg") center no-repeat;
-  background-size: cover;
-}
-.bg-6{
-  background: url("../images/6.jpg") center no-repeat;
   background-size: cover;
 }
 .bg-bag-money{

@@ -1,8 +1,8 @@
 from flask import *
 from mongoengine import *
 import mlab
-from models.buy import Buy
-
+from models.service import Service
+mlab.connect()
 app = Flask(__name__)
 
 app.secret_key = "123456789"
@@ -85,12 +85,12 @@ def analysis():
             error = 1
             return render_template('detail.html', money = money,error=error)
         else:
-            return render_template('spending.html', money = money, n1=round(round(n1,1)*money,2), n2=round(round(n2,1)*money,2), n3=round(round(n3,1)*money,2), n4=round(round(n4,1)*money,2), n5=round(round(n5,1)*money))
+            return render_template('spending.html', money = money, n1=round(n1*money,2), n2=round(n2*money,2), n3=round(n3*money,2), n4=round(n4*money,2), n5=round(n5*money,2))
 
-@app.route('/buy')
-def buy():
-    all_buy = Buy.objects()
-    return render_template('buy.html',all_buy=all_buy)
+@app.route('/service')
+def service():
+    all_service = Service.objects()
+    return render_template('service.html',all_service=all_service)
 
 if __name__ == '__main__':
   app.run(debug=True)

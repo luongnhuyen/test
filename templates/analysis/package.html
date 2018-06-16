@@ -39,13 +39,14 @@
       </div>
 
     </div>
-    {% if error == 1 %}
-    <div class=" d-flex center mt-65">
-      <font color="red" size="3" class="mr-40">Nhập lỗi</font>
-    </div>
-    {% endif %}
-    <div class=" d-flex center mt-65">
+    <div class=" d-flex center flex-column mt-65">
       <button class="btn bg-red text-white" type="submit">Xem kết quả</button>
+      {% if error == 1 %}
+      <div class="mt-10">
+        <font color="red" size="3" class="text-center">Nhập lỗi</font>
+      </div>
+      {% endif %}
     </div>
+
   </form>
 </div>
