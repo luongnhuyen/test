@@ -94,48 +94,42 @@ def analysis():
                 error = 1
                 return render_template('detail.html', money = money,error=error)
             else:
+                n1=round(n1*money/100,2)
+                n2=round(n2*money/100,2)
+                n3=round(n3*money/100,2)
+                n4=round(n4*money/100,2)
+                n5=round(n5*money/100,2)
+                food = round(n1*money*0.5/100,2)
+                go = round(n1*money*0.2/100,2)
+                life = round(n1*money*0.2/100,2)
+                other = round(n1*money*0.1/100,2)
+                book = round(n2*money*0.4/100,2)
+                training = round(n2*money*0.6/100,2)
+                all_food = Service.objects(type = "food")
+                all_drink = Service.objects(type = "drink",price__lte = food)
+                all_book = Service.objects(type = "book",price__lte = book)
+                all_training = Service.objects(type = "training",price__lte = training)
                 return render_template('spending.html',
                 money = money,
-                n1=round(n1*money/100,2),
-                n2=round(n2*money/100,2),
-                n3=round(n3*money/100,2),
-                n4=round(n4*money/100,2),
-                n5=round(n5*money/100,2),
-                food = round(n1*money*0.5/100,2),
-                go = round(n1*money*0.2/100,2),
-                life = round(n1*money*0.2/100,2),
-                other = round(n1*money*0.1/100,2),
-                book = round(n2*money*0.4/100,2),
-                training = round(n2*money*0.6/100,2)
+                n1=n1,
+                n2=n2,
+                n3=n3,
+                n4=n4,
+                n5=n5,
+                food = food,
+                go = go,
+                life =life,
+                other =other,
+                book = book,
+                training = training,
+                all_food = all_food,
+                all_drink = all_drink,
+                all_book = all_book,
+                all_training = all_training
                 )
 
 @app.route('/service')
 def service():
-    all_service = Service.objects()
-    return render_template('service.html',all_service=all_service)
-
-@app.route('/n1')
-def n1():
-    all_service = Service.objects(type="food")
-    return render_template('service.html',all_service=all_service)
-
-@app.route('/n2')
-def n2():
-    all_service = Service.objects(type="book")
-    return render_template('service.html',all_service=all_service)
-
-@app.route('/n3')
-def n3():
-    all_service = Service.objects()
-    return render_template('service.html',all_service=all_service)
-
-@app.route('/n4')
-def n4():
-    all_service = Service.objects()
-    return render_template('service.html',all_service=all_service)
-
-@app.route('/n5')
-def n5():
     all_service = Service.objects()
     return render_template('service.html',all_service=all_service)
 

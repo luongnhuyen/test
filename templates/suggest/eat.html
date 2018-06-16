@@ -1,63 +1,11 @@
 <div id="sg_eat" class="">
 
-
-<div class="d-flex justify-content-around container flex-wrap">
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Phở bò</h5>
-    <p class="card-text">25.000</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="d-flex justify-content-around container flex-wrap">
+    {% for food in all_food %}
+      <p>{{food.name}}</p>
+      <p>{{food.price}}</p>
+      <p>{{food.link}}</p>
+      <p><img src="{{food.picture}}" alt=""></p>
+    {% endfor %}
   </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Phở bò</h5>
-      <p class="card-text">25.000</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Phở bò</h5>
-      <p class="card-text"> 25.000</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Phở bò</h5>
-      <p class="card-text"> 25.000</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Phở bò</h5>
-      <p class="card-text"> 25.000</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Phở bò</h5>
-      <p class="card-text"> 25.000</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-
-</div>
-
-
 </div>
