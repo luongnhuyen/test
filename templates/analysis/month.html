@@ -35,63 +35,96 @@
 
 .panel {
     padding: 0 18px;
-    background-color: white;
+    background-color: #eee;
     max-height: 0;
     overflow: hidden;
+    border-color: red;
     transition: max-height 0.2s ease-out;
 }
 </style>
 
-<div class="d-flex center">
-  <div class="d-flex justify-content-around mb-50 w-85">
+<div class="d-flex flex-column align-items-center" style="height: 600px">
 
-    <div class="d-flex flex-column justify-content-center w-15 h-400">
+  <div class="d-flex justify-content-around mb-50 w-85" style="margin: 0px; padding: 0px">
+    <div class="d-flex flex-column justify-content-center w-15">
       <div class="bg-bag-money h-255">
         <p class="pt-200px text-center font-weight-bold text-red" > NHU CẦU THIẾT YẾU</p>
       </div>
-      <button class="text-center accordion">{{n1}} triệu</button>
-      <div class="panel">
-        <p>Ăn uống, đi lại, sinh hoạt phí nè...</p>
-      </div>
     </div>
 
-    <div class="d-flex flex-column justify-content-center w-15 h-400">
+    <div class="d-flex flex-column justify-content-center w-15">
       <div class="bg-bag-money h-255">
         <p class="pt-200px text-center font-weight-bold text-red" > GIÁO DỤC</p>
       </div>
-      <button class="text-center accordion">{{n2}} triệu</button>
-      <div class="panel">
-        <p>Mua sách, học thêm khóa học nâng cao bản thân nhé...</p>
-      </div>
     </div>
 
-    <div class="d-flex flex-column justify-content-center w-15 h-400">
+    <div class="d-flex flex-column justify-content-center w-15 ">
       <div class="bg-bag-money h-255">
         <p class="pt-200px text-center font-weight-bold text-red" > HƯỞNG THỤ</p>
       </div>
-      <button class="text-center accordion">{{n3}} triệu</button>
-      <div class="panel">
-        <p>Đi du lịch, spa, shopping nào...</p>
-      </div>
     </div>
 
-    <div class="d-flex flex-column justify-content-center w-15 h-400">
+    <div class="d-flex flex-column justify-content-center w-15 ">
       <div class="bg-bag-money h-255">
         <p class="pt-200px text-center font-weight-bold text-red" > TỪ THIỆN</p>
       </div>
-      <button class="text-center accordion">{{n4}} triệu</button>
-      <div class="panel">
-        <p>Hạnh phúc là cho đi để cùng chia sẻ với những người kém may mắn nhé...</p>
-      </div>
     </div>
 
-    <div class="d-flex flex-column justify-content-center w-15 h-400">
+    <div class="d-flex flex-column justify-content-center w-15">
       <div class="bg-bag-money h-255">
         <p class="pt-200px text-center font-weight-bold text-red" > ĐẦU TƯ</p>
       </div>
-      <button class="text-center accordion">{{n5}} triệu</button>
+    </div>
+
+  </div>
+
+  <div class="d-flex justify-content-around mb-50 w-85" style="margin-bottom: 100px">
+    <div class="w-18">
+      <button class="text-center accordion border-dange">{{n1}} triệu</button>
       <div class="panel">
-        <p>Đầu tư chứng khoán, kinh doanh nè...</p>
+        <br>
+        <p>Ăn uống: {{food}} triệu</p>
+        <p>Đi lại: {{go}} triệu</p>
+        <p>Sinh hoạt phí: {{life}} triệu</p>
+        <p>Khác: {{other}} triệu</p>
+        <br>
+      </div>
+    </div>
+
+    <div class="w-18">
+      <button class="text-center accordion border-dange">{{n2}} triệu</button>
+      <div class="panel">
+        <br>
+        <p>Sách, truyện, tạp chí: {{book}} triệu</p>
+        <p>Khóa học: {{training}} triệu</p>
+        <br>
+      </div>
+    </div>
+
+    <div class="w-18">
+      <button class="text-center accordion border-dange">{{n3}} triệu</button>
+      <div class="panel">
+        <br>
+        <p>Du lịch, spa, shopping</p>
+        <br>
+      </div>
+    </div>
+
+    <div class="w-18">
+      <button class="text-center accordion border-dange">{{n4}} triệu</button>
+      <div class="panel">
+        <br>
+        <p>Hạnh phúc là cho đi để cùng chia sẻ với những người kém may mắn nhé...</p>
+        <br>
+      </div>
+    </div>
+
+    <div class="w-18">
+      <button class="text-center accordion border-dange">{{n5}} triệu</button>
+      <div class="panel">
+        <br>
+        <p>Đầu tư chứng khoán, kinh doanh</p>
+        <br>
       </div>
     </div>
 

@@ -1,5 +1,5 @@
 <div class="center d-flex flex-column mtb-30">
-  <p class="text-center font-size-30px cl-xam ">Lập kế hoạch tài chính cho tương lai </p>
+  <p class="text-center font-weight-bold font-size-30px cl-xam ">Lập kế hoạch tài chính cho tương lai </p>
   <form class="col-md-6" method="post">
     <div class="form-group cl-xam">
       <label >Thu nhập mỗi tháng</label>
@@ -20,18 +20,18 @@
     <div class="form-group cl-xam">
       <label>Chọn ngân hàng muốn gửi</label>
       <select type="number" class="form-control text-right" name="bank" value="">
-        <option value="0.035">Agirbank - Lãi suất 3.5%/năm</option>
-        <option value="0.03">Vietcombank - Lãi suất 3%/năm</option>
-        <option value="0.04">BIDV - Lãi suất 4%/năm</option>
-        <option value="0.055">TPbank - Lãi suất 5.5%/năm</option>
+        <option value="0.067">Agirbank - Lãi suất 6.7% /năm</option>
+        <option value="0.064">Vietcombank - Lãi suất 6.4% /năm</option>
+        <option value="0.069">BIDV - Lãi suất 6.9% /năm</option>
+        <option value="0.073">TPbank - Lãi suất 7.3% /năm</option>
       </select>
     </div>
     {% if error == 1 %}
-    <font color="red" size="3">Không được để ô trống. Bạn cần trả lời hết các câu hỏi</font>
+    <font color="red" size="3">Bạn cần trả lời hết các câu hỏi!</font>
     {% elif error == 2 %}
-    <font color="red" size="3">Số tiền cần tiết kiệm mỗi tháng lớn hơn khả năng tiết kiệm của bạn. Nên kéo dài thời gian hoặc tăng khả năng tiết kiệm mỗi tháng</font>
+    <font color="red" size="3">Số tiền cần tiết kiệm mỗi tháng vượt quá khả năng tiết kiệm của bạn. Nên kéo dài thời gian hoặc tăng khả năng tiết kiệm mỗi tháng</font>
     {% elif error == 3 %}
-    <font color="red" size="3"> Không hợp lệ. Khả năng tiết kiệm mỗi tháng cao hơn cả thu nhập. Bạn cần nhập lại </font>
+    <font color="red" size="3"> Không hợp lệ! Khả năng tiết kiệm mỗi tháng phải nhỏ hơn thu nhập !</font>
 
 
     {% endif %}

@@ -2,7 +2,7 @@ from mongoengine import *
 
 import mlab
 
-class Buy(Document):
+class Service(Document):
     name = StringField()
     type = StringField()
     price = IntField()

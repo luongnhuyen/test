@@ -7,28 +7,30 @@
   </head>
   <body>
     {% include 'homepage/header.html' %}
-    <p class="text-center font-weight-bold font-size-30px pt-50px">Gợi ý chi tiêu cho bạn</p>
+    <p class="text-center font-weight-bold font-size-30px mt-40">Gợi ý chi tiêu cho bạn</p>
     {% include 'analysis/analysis.html' %}
-    <p class="text-center font-size-20px ">Kế hoạch chi tiêu mỗi tháng của bạn sẽ là:</p>
+    <p class="text-center font-size-15px ">Gợi ý kế hoạch chi tiêu mỗi tháng :</p>
     {% include 'analysis/month.html' %}
     {% include 'homepage/footer.html' %}
   </body>
   <script>
-  var acc = document.getElementsByClassName("accordion");
-  console.log("acclength: ", acc.length)
-  var i;
-  for (i = 0; i < acc.length; i++) {
-  console.log(acc[i])
-  acc[i].addEventListener("click", function() {
-    console.log("click")
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-  });
+
+var acc = document.getElementsByClassName("accordion");
+console.log("acclength: ", acc.length)
+var i;
+
+for (i = 0; i < acc.length; i++) {
+console.log(acc[i])
+acc[i].addEventListener("click", function() {
+  console.log("click")
+  this.classList.toggle("active");
+  var panel = this.nextElementSibling;
+  if (panel.style.maxHeight){
+    panel.style.maxHeight = null;
+  } else {
+    panel.style.maxHeight = panel.scrollHeight + "px";
   }
-  </script>
+});
+}
+</script>
 </html>

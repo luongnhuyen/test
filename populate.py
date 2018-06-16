@@ -1,11 +1,11 @@
 import mlab
-from models.buy import Buy
+from models.service import Service
 
 mlab.connect()
 
-buy = Buy(name="aaa",
+service = Service(name="aaa",
              type="book",
              price=10000,
              link="tiki.com",
              picture="url")
-buy.save()
+service.save()

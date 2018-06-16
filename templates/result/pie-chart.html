@@ -1,7 +1,7 @@
 <div class="d-flex h-100">
   <div class="d-flex center flex-column w-50">
     <div>
-      <canvas id="chart" width="600" height="400"></canvas>
+      <canvas id="chart" width="500" height="352"></canvas>
       <script>
         var pieData = [
         {% for item, label, colors in set %}
@@ -19,6 +19,7 @@
         new Chart(document.getElementById("chart").getContext("2d")).Pie(pieData);
         </script>
     </div>
+    <br>
     <br>
     <br>
     <h5>Mỗi tháng bạn cần tiết kiệm {{ratio_save_income}} % thu nhập</h5>
@@ -62,8 +63,6 @@
     </script>
     <br>
     <br>
-    <br>
     <h5 class="text-center">Số tiền tiết kiệm theo từng tháng</h5>
   </div>
-
 </div>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+  </head>
+  <body>
+    <h1>Admin page</h1>
+    <table border="1px">
+      <thead>
+        <th>No</th>
+        <th>name</th>
+        <th>type</th>
+        <th>price</th>
+        <th>link</th>
+        <th>picture</th>
+      </thead>
+      <tbody>
+        {% for service in all_service %}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{service.name}}</td>
+          <td>{{service.type}}</td>
+          <td>{{service.price}}</td>
+          <td>{{service.link}}</td>
+          <td>{{service.picture}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

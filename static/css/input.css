@@ -16,17 +16,20 @@
 .w-50{
   width: 50%;
 }
+.w-30{
+  width: 30%;
+}
 .w-25{
   width: 25%;
 }
 .w-15{
   width: 15%;
 }
+.w-18{
+  width: 18%;
+}
 .h-600{
   height: 600px;
-}
-.h-500{
-  height: 500px;
 }
 .h-400{
   height: 400px;
@@ -58,6 +61,12 @@
 .h-40{
   height: 40px;
 }
+.h-45{
+  height: 45px;
+}
+.h-50{
+  height: 50px;
+}
 .bg-white{
   background: #fdfdfd;
 }
@@ -87,11 +96,17 @@
 .font-size-25px{
   font-size: 25px;
 }
+.font-size-15px{
+  font-size: 15px;
+}
 .mt-65{
   margin-top: 65px;
 }
 .mt-40{
   margin-top: 40px;
+}
+.mt-30{
+  margin-top: 30px;
 }
 .mt-20{
   margin-top: 20px;
@@ -106,11 +121,11 @@
 .mr-40{
   margin-right: 40px;
 }
+.mb-20{
+  margin-bottom: 20px;
+}
 .mb-50{
   margin-bottom: 50px;
-}
-.mb-200{
-  margin-bottom: 200px;
 }
 .bg-1{
   background: url("../images/1.jpg") center no-repeat;
@@ -118,22 +133,6 @@
 }
 .bg-2{
   background: url('https://i.imgur.com/Irt8sdS.png') center no-repeat;
-  background-size: cover;
-}
-.bg-3{
-  background: url("../images/3.jpg") center no-repeat;
-  background-size: cover;
-}
-.bg-4{
-  background: url("../images/4.jpg") center no-repeat;
-  background-size: cover;
-}
-.bg-5{
-  background: url("../images/5.jpg") center no-repeat;
-  background-size: cover;
-}
-.bg-6{
-  background: url("../images/6.jpg") center no-repeat;
   background-size: cover;
 }
 .bg-bag-money{
@@ -154,6 +153,9 @@
 }
 .pt-50px{
   padding-top:50px;
+}
+.pt-20px{
+  padding-top: 20px;
 }
 .pb-50px{
   padding-bottom: 50px;
