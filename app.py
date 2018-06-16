@@ -76,29 +76,38 @@ def analysis():
         return render_template('detail.html', money = money)
     elif request.method == "POST":
         form = request.form
-        n1 = float(form['n1'])
-        n2 = float(form['n2'])
-        n3 = float(form['n3'])
-        n4 = float(form['n4'])
-        n5 = float(form['n5'])
-        if (n1 + n2 + n3 + n4 + n5) != 1:
+        n1 = form['n1']
+        n2 = form['n2']
+        n3 = form['n3']
+        n4 = form['n4']
+        n5 = form['n5']
+        if n1 == "" or n2 == "" or n3 == "" or n4 == "" or n5 == "":
             error = 1
             return render_template('detail.html', money = money,error=error)
         else:
-            return render_template('spending.html',
-            money = money,
-            n1=round(n1*money,2),
-            n2=round(n2*money,2),
-            n3=round(n3*money,2),
-            n4=round(n4*money,2),
-            n5=round(n5*money,2),
-            food = round(n1*money*0.5,2),
-            go = round(n1*money*0.2,2),
-            life = round(n1*money*0.2,2),
-            other = round(n1*money*0.1,2),
-            book = round(n2*money*0.4,2),
-            training = round(n2*money*0.6,2)
-            )
+            n1 = int(form['n1'])
+            n2 = int(form['n2'])
+            n3 = int(form['n3'])
+            n4 = int(form['n4'])
+            n5 = int(form['n5'])
+            if (n1 + n2 + n3 + n4 + n5) != 100:
+                error = 1
+                return render_template('detail.html', money = money,error=error)
+            else:
+                return render_template('spending.html',
+                money = money,
+                n1=round(n1*money/100,2),
+                n2=round(n2*money/100,2),
+                n3=round(n3*money/100,2),
+                n4=round(n4*money/100,2),
+                n5=round(n5*money/100,2),
+                food = round(n1*money*0.5/100,2),
+                go = round(n1*money*0.2/100,2),
+                life = round(n1*money*0.2/100,2),
+                other = round(n1*money*0.1/100,2),
+                book = round(n2*money*0.4/100,2),
+                training = round(n2*money*0.6/100,2)
+                )
 
 @app.route('/service')
 def service():
