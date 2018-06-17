@@ -4,7 +4,7 @@ $(document).ready(()=>{
 });
 
 const Content_Warning = (content)=>{
-    let htmlInsertWarning=`<font color="red" size="3"><i class="fas fa-exclamation-triangle"></i>${content}</font>`;
+    let htmlInsertWarning=`<font color="red" size="3"><i class="mr-2 fas fa-exclamation-triangle"></i>${content}</font>`;
     return htmlInsertWarning;
 }
 
@@ -28,28 +28,21 @@ const Show = ()=>{
       console.log(saving);
 
       $("#show").empty();
-      if (value_income < saving){
-          content_warning = `Không thể đạt được mục tiêu. Hãy điều chỉnh lại mục tiêu hoặc thời gian!`;
-          document.querySelector("#show").insertAdjacentHTML('afterbegin', Content_Warning(content_warning));
-          console.log("Saving > Income");
-          return false;
-      }
-      else if (value_max > value_income){
+      if (value_max > value_income){
         content_warning = `Số tiền tiết kiệm mỗi tháng lớn hơn thu nhập mỗi tháng!`;
         document.querySelector("#show").insertAdjacentHTML('afterbegin', Content_Warning(content_warning));
         console.log("Max > Income");
         return false;
       }
-
-      else if (saving <= 0){
-        content_warning = `Không thể đạt được mục tiêu. Hãy điều chỉnh lại mục tiêu hoặc thời gian`;
-        document.querySelector("#show").insertAdjacentHTML('afterbegin', Content_Warning(content_warning));
-        console.log("Saving <= 0");
-        return false;
-      }
       else {
-        console.log("Vao day");
-        return true;
+        if (value_max < saving){
+            content_warning = `Không thể đạt được mục tiêu. Hãy điều chỉnh lại mục tiêu hoặc thời gian!`;
+            document.querySelector("#show").insertAdjacentHTML('afterbegin', Content_Warning(content_warning));
+            console.log("Saving > Income");
+            return false;
+        }
+        else
+            return true;
       }
       e.preventDefault();
     })

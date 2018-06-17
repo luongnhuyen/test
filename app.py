@@ -27,7 +27,7 @@ def index():
             error = 3
             return render_template('error.html', error = error)
         else:
-            saving = (int(goal)*float(bank)/12)/(pow((1+float(bank)/12),int(month))-1)
+            saving = (int(goal)*float(bank)/12)/( pow((1+float(bank)/12), int(month))-1)
             session['income']= income
             session['goal']=goal
             session['saving']=saving
